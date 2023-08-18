@@ -1,7 +1,7 @@
 // We start with an array of URLs
 const urls = [
-  "https://jsonplaceholder.typicode.com/posts/1",
-  "https://jsonplaceholder.typicode.com/users/1"
+  "https://jsonplaceholder.typicode.com/posts",
+  "https://jsonplaceholder.typicode.com/comments",
 ];
 let promises = urls.map((url) => fetch(url).then((r) => r.json()));
 console.log(promises);
