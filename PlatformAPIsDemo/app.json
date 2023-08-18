@@ -1,0 +1,21 @@
+{
+  "name": "PlatformAPIs",
+  "displayName": "PlatformAPIs",
+  "expo": {
+    "name": "PlatformAPIs",
+    "slug": "PlatformAPIs",
+    "plugins": [
+      "react-native-vision-camera"
+    ]
+  },
+  "plugins": [
+    [
+      "react-native-vision-camera",
+      {
+        "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera.",
+        "enableMicrophonePermission": true,
+        "microphonePermissionText": "$(PRODUCT_NAME) needs access to your Microphone."
+      }
+    ]
+  ]
+}
