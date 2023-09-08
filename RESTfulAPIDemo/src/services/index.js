@@ -20,7 +20,7 @@ client.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.error(error); //or ToastAndroid, AlertIOS
+    console.error(error); //or ToastAndroid, AlertIOS (sử dụng Platform.OS === 'ios' để kiểm tra)
     return Promise.reject(error);
   }
 );
@@ -55,13 +55,25 @@ const getToken = () => {
 const authService = {
   getAuth(url, params) {
     const token = getToken();
-    return client.request({
+    client.get(url, {
       headers: { Authorization: `Bearer ${token}` },
-      method: "get",
-      url,
       params,
-    });
+    })
+    // return client.request({
+    //   headers: { Authorization: `Bearer ${token}` },
+    //   method: "get",
+    //   url,
+    //   params,
+    // });
   },
 };
 
-export { commonService, authService };
+const getAuth = (url, params) => {
+  const token = getToken();
+  return client.get(url, {
+    headers: { Authorization: `Bearer ${token}` },
+    params,
+  })
+}
+
+export { commonService, authService, getAuth };

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { commonService } from './src/services';
+import { commonService, authService } from './src/services';
 
 const getDataTest = () => {
   commonService.getData()

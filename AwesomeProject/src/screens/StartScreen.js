@@ -1,4 +1,4 @@
-import {Text, View, Button, TouchableOpacity} from 'react-native';
+import { Text, View, Button, Pressable, StyleSheet } from 'react-native';
 import ScreenNames from '../utils/ScreenNames';
 
 const handleButtonPress = () => {};
@@ -12,14 +12,42 @@ navigate thường được sử dụng để chuyển đến một màn hình m
 */
 const StartScreen = ({navigation, route}) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Start Screen 123</Text>
-      <Button
+      {/* <Button
         title="Login"
         onPress={() => navigation.navigate(ScreenNames.LOGIN, { data: 1 })}
-      />
+      /> */}
+      <Pressable style={styles.button} onPress={() => navigation.navigate(ScreenNames.LOGIN, { data: 1 })}>
+        <Text style={styles.text}>Login</Text>
+      </Pressable>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  button: {
+    width: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'blue',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
+  },
+});
 
 export default StartScreen;

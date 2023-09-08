@@ -28,9 +28,9 @@ import {
 import StartScreen from './src/screens/StartScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StackView } from '@react-navigation/stack';
 import LoginScreen from './src/screens/LoginScreen';
 import ScreenNames from './src/utils/ScreenNames';
+import ValidateScreen from './src/screens/ValidateScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -53,7 +53,7 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ScreenNames.START} screenOptions={screenOptionsWithoutHeader}>
+        <Stack.Navigator initialRouteName={ScreenNames.VALIDATE_SCREEN} screenOptions={screenOptionsWithoutHeader}>
           <Stack.Screen 
             name={ScreenNames.START}
             component={StartScreen} 
@@ -63,6 +63,10 @@ function App(): JSX.Element {
             name={ScreenNames.LOGIN}
             component={LoginScreen}
             //options={{ headerShown: false, title: 'Login' }}
+          />
+          <Stack.Screen 
+            name={ScreenNames.VALIDATE_SCREEN}
+            component={ValidateScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>
