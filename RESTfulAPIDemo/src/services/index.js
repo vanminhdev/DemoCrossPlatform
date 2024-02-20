@@ -55,7 +55,7 @@ const getToken = () => {
 const authService = {
   getAuth(url, params) {
     const token = getToken();
-    client.get(url, {
+    return client.get(url, {
       headers: { Authorization: `Bearer ${token}` },
       params,
     })

@@ -1,5 +1,5 @@
 export default {
   api: {
-    baseURL: 'http://localhost:5000',
+    baseURL: 'http://192.168.86.14:5000',
   },
 };

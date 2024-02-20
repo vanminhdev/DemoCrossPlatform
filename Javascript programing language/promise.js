@@ -1,17 +1,3 @@
-setTimeout(() => {
-  console.log("run");
-}, 1000);
-
-// Call
-let updateIntervalId = setInterval(() => {
-  console.log("interval run");
-}, 1000);
-// Stop
-function stopCheckingForUpdates() {
-  clearInterval(updateIntervalId);
-}
-console.log('den day');
-
 // Define the fetch function using a callback
 function fetchData(url, callback) {
   fetch(url)
@@ -30,5 +16,5 @@ function handleData(error, data) {
 }
 
 // Usage: Call the fetchData function with the URL and callback
-const apiUrl = 'https://jsonplaceholder1.typicode.com/posts/1';
+const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
 fetchData(apiUrl, handleData);
