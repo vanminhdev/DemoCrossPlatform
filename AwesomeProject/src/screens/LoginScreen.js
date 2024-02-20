@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import {Text, View} from 'react-native';
+import { commonService } from '../services';
 
 const Inputs = ({ name }) => {
   return (
@@ -9,11 +11,17 @@ const Inputs = ({ name }) => {
 }
 
 const LoginScreen = ({navigation, route}) => {
+  useEffect(() => {
+    commonService.getData("/api/student/get-all", { pageSize: 10, pageIndex: 1 })
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch()
+  }, [])
+
   console.log(route);
-  const { data } = route.params;
-  if (data) {
-    console.log('data:', data);
-  }
+  console.log('data:', route?.params?.data);
+  data = route?.params?.data;
   return (
     <View>
       <Text>Login Screen</Text>

@@ -1,4 +1,4 @@
-import { Text, View, Button, Pressable, StyleSheet } from 'react-native';
+import {Text, View, Button, Pressable, StyleSheet} from 'react-native';
 import ScreenNames from '../utils/ScreenNames';
 
 const handleButtonPress = () => {};
@@ -18,7 +18,9 @@ const StartScreen = ({navigation, route}) => {
         title="Login"
         onPress={() => navigation.navigate(ScreenNames.LOGIN, { data: 1 })}
       /> */}
-      <Pressable style={styles.button} onPress={() => navigation.navigate(ScreenNames.LOGIN, { data: 1 })}>
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate(ScreenNames.LOGIN, {data: 1})}>
         <Text style={styles.text}>Login</Text>
       </Pressable>
     </View>
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   button: {
     width: 200,

@@ -53,7 +53,7 @@ function App(): JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ScreenNames.VALIDATE_SCREEN} screenOptions={screenOptionsWithoutHeader}>
+        <Stack.Navigator initialRouteName={ScreenNames.LOGIN} screenOptions={screenOptionsWithoutHeader}>
           <Stack.Screen 
             name={ScreenNames.START}
             component={StartScreen} 
