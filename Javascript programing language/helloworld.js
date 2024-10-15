@@ -1,4 +1,12 @@
-console.log("Hello world");
+console.log("Hello '' world");
+var str = "Nguyen Van A";
+console.log(`Hello world ${str}`);
+
+var str2 = "";
+
+if (str2) {
+    
+}
 
 console.log(-1/0);
 
@@ -15,6 +23,8 @@ let student = {
         console.log("abc")
     }
 }
+
+
 
 student.method1();
 
